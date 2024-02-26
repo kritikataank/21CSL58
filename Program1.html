@@ -1,0 +1,36 @@
+<!--Develop Angular JS program that allows user to input their first
+name and last name and display their full name. Note: The default values for
+first name and last name may be included in the program.-->
+
+<!DOCTYPE html>
+<html ng-app="nameApp">
+    <head>
+        <title>Angular JS Name App</title>
+        <script src="D:\angular-1.8.2\angular-1.8.2\angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="NameController">
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName" ng-model="user.firstName" placeholder="Enter your first name">
+            <br>
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName" ng-model="user.lastName" placeholder="Enter your last name">
+            <br>
+            <p ng-bind="getFullName()"></p>
+        </div>
+        <script>
+            var app = angular.module('nameApp',[]);
+            app.controller("NameController",function($scope)
+            {
+                $scope.user={
+                    firstName:'John',
+                    lastName:'Doe'
+                };
+                $scope.getFullName=function(){
+                    return 'Full Name = ' + $scope.user.firstName + ' ' + $scope.user.lastName;
+                };
+            });
+        </script>
+    </body>
+</html>
