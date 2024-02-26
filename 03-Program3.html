@@ -1,0 +1,30 @@
+<!--Develop a simple Angular JS calculator application that can perform 
+basic mathematical operations (addition, subtraction, multiplication, division) 
+based on user input-->
+
+<!DOCTYPE html>
+<html ng-app="MyApp">
+    <head>
+        <title>Number Calculator with Angular JS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="CalculatorController">
+            <h1>Number Calculator with Angular JS</h1>
+            <p>Enter a number:</p>
+            <input type="number" ng-model="number1">
+            <p>Enter a another number:</p>
+            <input type="number" ng-model="number2">
+            <p>Result : {{number1}} + {{number2}} = {{number1 + number2}}</p>
+            <p>Result : {{number1}} - {{number2}} = {{number1 - number2}}</p>
+            <p>Result : {{number1}} * {{number2}} = {{number1 * number2}}</p>
+            <p>Result : {{number1}} / {{number2}} = {{number1 / number2}}</p>
+        </div>
+        <script>
+            angular.module("MyApp",[]).controller("CalculatorController",function($scope){
+                $scope.number1=0;
+                $scope.number2=0;
+            });
+        </script>
+    </body>
+</html>
